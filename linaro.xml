@@ -2,44 +2,49 @@
 <manifest>
   <!-- Repositories -->
 
-  <remote name="linaro-android"
-          fetch="git://android.git.linaro.org/"
-          review="review.android.git.linaro.org" />
-
-  <remote name="github" fetch="http://github.com/96boards" />
   <remote name="robh" fetch="http://github.com/robherring" />
-  <remote name="johnstultz" fetch="https://git.linaro.org/people/john.stultz" />
-  <remote name="freedesktop" fetch="git://anongit.freedesktop.org/" />
-  <remote name="x86" fetch="git://gitscm.sf.net/gitroot/android-x86/" />
-  <remote name="swiftshader" fetch="https://swiftshader.googlesource.com/" />
-  <remote name="korg" fetch="git://git.kernel.org/pub/scm/linux/kernel/git/" />
+  <remote name="collabora" fetch="ssh://git@gitlab.collabora.com/zodiac/" />
+
+  <!-- Forked components -->
+  <remove-project path="system/core" name="platform/system/core" />
+  <project path="system/core" name="system_core.git" groups="pdk" revision="master" remote="collabora"/>
+
+  <remove-project path="system/netd" name="platform/system/netd" />
+  <project path="system/netd" name="system_netd.git" groups="pdk" revision="master" remote="collabora"/>
+
+  <remove-project path="system/vold" name="platform/system/vold" />
+  <project path="system/vold" name="system_vold.git" groups="pdk" revision="master" remote="collabora"/>
+
+  <remove-project path="system/bt" name="platform/system/bt" />
+  <project path="system/bt" name="system_bt.git" groups="pdk" revision="master" remote="collabora"/>
+
+  <remove-project path="external/libdrm" name="platform/external/libdrm" />
+  <project path="external/libdrm" name="drm.git" groups="pdk" revision="master" remote="collabora"/>
+
+  <remove-project path="frameworks/base" name="platform/frameworks/base" />
+  <project path="frameworks/base" name="frameworks_base.git" groups="pdk" revision="master" remote="collabora"/>
+
+  <remove-project path="frameworks/native" name="platform/frameworks/native" />
+  <project path="frameworks/native" name="frameworks_native.git" groups="pdk" revision="master" remote="collabora"/>
 
   <!-- Linaro Device Configs -->
   <project path="device/linaro/generic" name="generic_device" revision="master" remote="robh" groups="default" />
 
-  <!-- Pre-built kernel tree -->
-  <project path="device/linaro/generic-kernels" name="AOSP/device/linaro/generic-kernels.git" revision="master" remote="johnstultz" groups="default" />
-
-  <project path="external/linux-firmware" name="firmware/linux-firmware.git" revision="master" remote="korg" groups="default" />
-
   <!-- Critical drm_hwcomposer components -->
   <remove-project path="external/mesa3d" name="platform/external/mesa3d" />
-  <project path="external/mesa3d" name="mesa" revision="android-m" remote="robh" groups="default" />
+  <project path="external/mesa3d" name="mesa.git" revision="master" remote="collabora" groups="default" />
 
-  <project path="external/gbm_gralloc" name="gbm_gralloc" revision="master" remote="robh" groups="default" />
+  <project path="external/gbm_gralloc" name="gbm_gralloc.git" groups="pdk" revision="master" remote="collabora"/>
 
-  <remove-project path="external/drm_hwcomposer" name="platform/external/drm_hwcomposer" />
-  <project path="external/drm_hwcomposer" name="drm_hwcomposer" revision="hwc2" remote="robh" groups="default" />
-
-  <remove-project path="external/libdrm" name="platform/external/libdrm" />
-  <project path="external/libdrm" name="mesa/drm" revision="master" remote="freedesktop" groups="default" />
+  <!-- Audio -->
+  <project path="external/alsa-lib" name="alsa-lib.git" groups="pdk" revision="master" remote="collabora"/>
+  <project path="external/alsa-plugins" name="alsa-plugins.git" groups="pdk" revision="master" remote="collabora"/>
+  <project path="external/libsndfile" name="libsndfile.git" groups="pdk" revision="master" remote="collabora"/>
+  <project path="external/json-c" name="json-c.git" groups="pdk" revision="master" remote="collabora"/>
+  <project path="external/pulseaudio" name="pulseaudio.git" groups="pdk" revision="master" remote="collabora"/>
 
   <!-- Extra features -->
   <project path="external/libpciaccess" name="libpciaccess" remote="robh" revision="master" />
-
   <project path="external/iio-sensors-hal" name="android-iio-sensors-hal" revision="master" remote="robh" groups="default" />
-
-  <!-- Linaro Kernels -->
-  <project path="kernel/common" name="kernel/common" revision="android-4.9" groups="default" />
 
 </manifest>
