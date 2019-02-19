@@ -27,8 +27,10 @@
   <remove-project path="frameworks/native" name="platform/frameworks/native" />
   <project path="frameworks/native" name="frameworks_native.git" groups="pdk" revision="master" remote="collabora"/>
 
-  <!-- Linaro Device Configs -->
-  <project path="device/linaro/generic" name="generic_device" revision="master" remote="robh" groups="default" />
+  <remove-project path="external/minijail" name="platform/external/minijail" />
+  <project path="external/minijail" name="minijail.git" groups="pdk" revision="master" remote="collabora"/>
+
+  <project path="device/freedesktop" name="device_freedesktop.git" revision="master" remote="collabora" groups="default" />
 
   <!-- Critical drm_hwcomposer components -->
   <remove-project path="external/mesa3d" name="platform/external/mesa3d" />
