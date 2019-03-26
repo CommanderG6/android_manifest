@@ -1,9 +1,9 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- Repositories -->
 
-  <remote name="robh" fetch="http://github.com/robherring" />
-  <remote name="collabora" fetch="ssh://git@gitlab.collabora.com/zodiac/" />
+  <remote name="collabora" fetch="ssh://git@gitlab.collabora.com/spurv/" />
 
   <!-- Forked components -->
   <remove-project path="system/core" name="platform/system/core" />
@@ -46,7 +46,7 @@
   <project path="external/pulseaudio" name="pulseaudio.git" groups="pdk" revision="master" remote="collabora"/>
 
   <!-- Extra features -->
-  <project path="external/libpciaccess" name="libpciaccess" remote="robh" revision="master" />
-  <project path="external/iio-sensors-hal" name="android-iio-sensors-hal" revision="master" remote="robh" groups="default" />
+  <project path="external/libpciaccess" name="libpciaccess" remote="collabora" revision="master" />
+  <project path="external/iio-sensors-hal" name="android-iio-sensors-hal" revision="master" remote="collabora" groups="default" />
 
 </manifest>
