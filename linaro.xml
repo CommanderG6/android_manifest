@@ -3,7 +3,7 @@
 <manifest>
   <!-- Repositories -->
 
-  <remote name="collabora" fetch="ssh://git@gitlab.collabora.com/spurv/" />
+  <remote name="collabora" fetch="ssh://github.com/CommanderG6/" />
 
   <!-- Forked components -->
   <remove-project path="system/core" name="platform/system/core" />
